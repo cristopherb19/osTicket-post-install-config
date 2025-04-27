@@ -18,7 +18,7 @@ This tutorial outlines the post-install configuration of the open-source help de
 
 <h2>Objectives</h2>
 
-- If you haven't installed and setup osTicket yet on your machine, please follow the guide <a href="https://github.com/christianDCdev/osTicket-prereqs">here</a> and come back
+- If you haven't installed and setup osTicket yet on your machine, please follow the guide <a href="https://github.com/cristopherb19/osTicket-prereqs">here</a> and come back
 - Configure Roles
 - Configure Departments
 - Configure Teams
