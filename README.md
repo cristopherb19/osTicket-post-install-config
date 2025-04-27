@@ -54,7 +54,7 @@ The Admin Panel is used to manage system settings, configurations, and permissio
 
 <p>
 
-- Within osTicket, navigate to "Admin Panel" -> Agents -> Departments
+- In osTicket, navigate to "Admin Panel" -> Agents -> Departments
 - Use departments to control ticket visibility and assign areas of responsibility (e.g., Help Desk, SysAdmins, Networking)
 - Delete the "Maintenance" department to prevent tickets from automatically being sent there
 - Click "Add New Department" then fill out the following fields:
@@ -93,7 +93,7 @@ The Admin Panel is used to manage system settings, configurations, and permissio
 
 <p>
 
-- Within osTicket, navigate to "Admin Panel" -> Agents -> Add New Agent
+- In osTicket, navigate to "Admin Panel" -> Agents -> Add New Agent
 - Add agents with the following details:
 Jane: Assigned to the SysAdmins department.
 John: Assigned to the Support department.
@@ -111,7 +111,7 @@ John: Assigned to the Support department.
 <img src="https://imgur.com/KToVVBa.png" height="80%" width="80%" alt="Agent team assignment"/>
 <img src="https://imgur.com/QsvaTXR.png" height="80%" width="80%" alt="Agent team assignment"/>
 
-- In my case, I created 2 agents with the following assignments:
+- I created 2 agents with the following assignments:
   - Agent 1:
     - Name: Jane Doe
     - Email Address: Jane@lognpacific.com
