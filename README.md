@@ -32,14 +32,21 @@ This tutorial outlines the post-install configuration of the open-source help de
 
 <p>
 
-- In the osTicket installation page, click on "Your Staff Control Panel" link(http://localhost/osTicket/scp), login with admin credentials, then navigate to "Admin Panel" -> Agents -> Roles
+- Acknowledge Agent Panel vs Admin Panel:
+The Agent Panel is used by agents to work on tickets.
+The Admin Panel is used to manage system settings, configurations, and permissions.
+- In the osTicket installation page, click on "Your Staff Control Panel" link(http://localhost/osTicket/scp), login with admin credentials, then navigate to "Admin Panel" -> Agents -> Roles 
 - Click "Add New Role"
-<img src="https://i.imgur.com/egyX7q9.png" height="80%" width="80%" alt="New Role window"/>
+<img src="https://imgur.com/UtAGptB.png" height="80%" width="80%" alt="New Role window"/>
 
-- Name the role for someone that has full access (in my case I named the role "Supreme Admin")
-- Under "Permissions" tab, enable all check boxes
-- Click "Add Role" once your finished, and if done correctly, your new role will be under the "Roles" list
-<img src="https://i.imgur.com/52Hqo4p.png" height="80%" width="80%" alt="Role list"/>
+- Add a new role called Supreme Admin.
+- Define permissions for agents based on the role they will have. In this lab, we will give permissions for the Tickets, Tasks, and Knowledgebase sections.
+<img src="https://imgur.com/dd551Xf.png" height="80%" width="80%" alt="Role list"/>
+<img src="https://imgur.com/x0RA2c0.png" height="80%" width="80%" alt="Role list"/>
+<img src="https://imgur.com/9qLGmPu.png" height="80%" width="80%" alt="Role list"/>
+<img src="https://imgur.com/t7TtXQS.png" height="80%" width="80%" alt="Role list"/>
+<img src="https://imgur.com/LdsuIzV.png" height="80%" width="80%" alt="Role list"/>
+
 
 </p>
 <br />
@@ -48,14 +55,15 @@ This tutorial outlines the post-install configuration of the open-source help de
 <p>
 
 - Within osTicket, navigate to "Admin Panel" -> Agents -> Departments
+- Use departments to control ticket visibility and assign areas of responsibility (e.g., Help Desk, SysAdmins, Networking)
 - Delete the "Maintenance" department to prevent tickets from automatically being sent there
 - Click "Add New Department" then fill out the following fields:
   - Parent: Top Level Department
   - Name: SysAdmins
-<img src="https://i.imgur.com/aP0Rvsl.png" height="80%" width="80%" alt="New department page"/>
-
+<img src="https://imgur.com/JxHn5NJ.png" height="80%" width="80%" alt="New department page"/>
+<img src="https://i.imgur.com/aP0Rvsl.png" height="80%" width="80%" alt="New department page"/> 
 - Click "Create Dept"
-  
+<img src="https://imgur.com/LGuc9KI.png" height="80%" width="80%" alt="New department page"/>  
 </p>
 <br />
 <h3>&#9314; Configure Teams  </h3>
@@ -65,7 +73,8 @@ This tutorial outlines the post-install configuration of the open-source help de
 - Within osTicket, navigate to "Admin Panel" -> Agents -> Teams
 - Click "Add New Team"
 - Name the team "Online Banking" and click "Create Team"
-<img src="https://i.imgur.com/IphnRA8.png" height="80%" width="80%" alt="New team page"/>
+- Pull agents from different departments to form specialized teams
+<img src="https://imgur.com/7W3jOmZ.png" height="80%" width="80%" alt="New team page"/>
   
 </p>
 <br />
@@ -74,9 +83,10 @@ This tutorial outlines the post-install configuration of the open-source help de
 <p>
 
 - Within osTicket, navigate to "Admin Panel" -> Settings -> Users
-- Disable "Registration Required" box (should be unchecked)
+- Disable "Registration Required" box (should be unchecked) to allow ticket creation from anyone
+- Enable "Public Anyone can register" option to disable requiring users to register and log in before creating tickets
 - Click "Save Changes"
-<img src="https://i.imgur.com/o5fMnC2.png" height="80%" width="80%" alt="User Settings"/>
+<img src="https://imgur.com/dxNQAaN.png" height="80%" width="80%" alt="User Settings"/>
 </p>
 <br />
 <h3>&#9316; Configure Agents (employees / workers)</h3>
@@ -84,14 +94,22 @@ This tutorial outlines the post-install configuration of the open-source help de
 <p>
 
 - Within osTicket, navigate to "Admin Panel" -> Agents -> Add New Agent
-- Fill out necessary fields
-<img src="https://i.imgur.com/sjJU9tz.png" height="80%" width="80%" alt="Agent creation"/>
+- Add agents with the following details:
+Jane: Assigned to the SysAdmins department.
+John: Assigned to the Support department.
+<img src="https://imgur.com/4lOmcol.png" height="80%" width="80%" alt="Agent creation"/>
+- You can choose to set their password or send the agent a password reset email.
+<img src="https://imgur.com/mJDuwwh.png" height="80%" width="80%" alt="Agent creation"/>
 
 - Within "Access" tab, assign department and role
-<img src="https://i.imgur.com/k0GP3v9.png" height="80%" width="80%" alt="Agent dept and roleassignment"/>
+<img src="https://imgur.com/oBMKbsg.png" height="80%" width="80%" alt="Agent dept and roleassignment"/>
 
 - Within "Teams" tab, assign team, then click "Create" to finish
-<img src="https://i.imgur.com/ndfpvuA.png" height="80%" width="80%" alt="Agent team assignment"/>
+<img src="https://imgur.com/5YNyf0e.png" height="80%" width="80%" alt="Agent team assignment"/>
+<img src="https://imgur.com/du64ZLx.png" height="80%" width="80%" alt="Agent team assignment"/>
+<img src="https://imgur.com/2GJO8eT.png" height="80%" width="80%" alt="Agent team assignment"/>
+<img src="https://imgur.com/KToVVBa.png" height="80%" width="80%" alt="Agent team assignment"/>
+<img src="https://imgur.com/QsvaTXR.png" height="80%" width="80%" alt="Agent team assignment"/>
 
 - In my case, I created 2 agents with the following assignments:
   - Agent 1:
@@ -108,8 +126,8 @@ This tutorial outlines the post-install configuration of the open-source help de
     - Username: john
     - Password: Password1
     - Department: Support
-    - Role: View Only
-    - Team: (Unassigned)
+    - Role: Expanded Access
+    - Team: Online Banking
   
 </p>
 <br />
@@ -119,7 +137,7 @@ This tutorial outlines the post-install configuration of the open-source help de
 
 - Within "Agent Panel", navigate to Users -> Add User
 - Fill out necessary fields and click "Add User" to finish
-<img src="https://i.imgur.com/BmjV8yT.png" height="80%" width="80%" alt="Add user page"/>
+<img src="https://imgur.com/hICMzMh.png" height="80%" width="80%" alt="Add user page"/>
   
 </p>
 <br />
@@ -144,7 +162,10 @@ This tutorial outlines the post-install configuration of the open-source help de
     - Schedule: Monday-Friday, 8am - 5pm
    
   - All SLA pages will look something like the picture below:
-  <img src="https://i.imgur.com/S3p6SrJ.png" height="80%" width="80%" alt="SLA Page"/>
+  <img src="https://imgur.com/drDlWn8.png" height="80%" width="80%" alt="SLA Page"/>
+  <img src="https://imgur.com/pwrfk76.png" height="80%" width="80%" alt="SLA Page"/>
+  <img src="https://imgur.com/HUdQWDR.png" height="80%" width="80%" alt="SLA Page"/>
+  <img src="https://imgur.com/aq5CeVT.png" height="80%" width="80%" alt="SLA Page"/>
   
 </p>
 <br />
@@ -153,7 +174,7 @@ This tutorial outlines the post-install configuration of the open-source help de
 <p>
 
 - Within "Admin Panel", navigate to Manage -> Help Topics -> Add New Help Topic
-<img src="https://i.imgur.com/y6gPwdT.png" height="80%" width="80%" alt="Help Topic Page"/>
+<img src="https://imgur.com/p3zPM32.png" height="80%" width="80%" alt="Help Topic Page"/>
 
 - We are going to create the following Help Topics:
   - Help Topic 1:
@@ -171,15 +192,17 @@ This tutorial outlines the post-install configuration of the open-source help de
   - Help Topic 5:
     - Topic: Other
     - Parent Topic: General Inquiry
+<img src="https://imgur.com/hoKttSq.png" height="80%" width="80%" alt="SLA Page"/>
+<img src="https://imgur.com/hyxXr2M.png" height="80%" width="80%" alt="SLA Page"/>
+<img src="https://imgur.com/KytPD4j.png" height="80%" width="80%" alt="SLA Page"/>
+<img src="https://imgur.com/FWMzr7E.png" height="80%" width="80%" alt="SLA Page"/>
+<img src="https://imgur.com/CveU9Lk.png" height="80%" width="80%" alt="SLA Page"/>
   
 </p>
 <br />
 
 <h2 align=center>Congratulations!! You are now ready to explore the ticket lifecycle!</h2>
-
-<p>
-
-Once you're finished with post-install configuration, please go <a href="https://github.com/christianDCdev/osTicket-ticket-lifecycle">here</a> to see how tickets are made and resolved within osTicket.
+By completing the post-installation configuration steps, you have successfully customized osTicket to suit your organization's requirements. You are now ready to start using osTicket to manage and resolve customer issues efficiently. Once you're finished with post-install configuration, please continue <a href="https://github.com/cristopherb19/osTicket-ticket-lifecycle">here</a> to see how tickets are made and resolved within osTicket.
 
   
 </p>
